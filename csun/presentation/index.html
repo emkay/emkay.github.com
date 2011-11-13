@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->  <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>HTML, CSS, Javascript, and you.</title>
+	
+	<meta name="description" content="A workshop on html, css, and javascript.">
+	<meta name="author" content="Michael Matuzak">
+	<meta name="viewport" content="width=1024, user-scalable=no">
+	
+	<!-- Core and extension CSS files -->
+	<link rel="stylesheet" href="../core/deck.core.css">
+	<link rel="stylesheet" href="../extensions/goto/deck.goto.css">
+	<link rel="stylesheet" href="../extensions/menu/deck.menu.css">
+	<link rel="stylesheet" href="../extensions/navigation/deck.navigation.css">
+	<link rel="stylesheet" href="../extensions/status/deck.status.css">
+	<link rel="stylesheet" href="../extensions/hash/deck.hash.css">
+	
+	<!-- Theme CSS files (menu swaps these out) -->
+	<link rel="stylesheet" id="style-theme-link" href="../themes/style/mk.css">
+	<link rel="stylesheet" id="transition-theme-link" href="../themes/transition/horizontal-slide.css">
+	
+	<!-- Custom CSS just for this page -->
+	<link rel="stylesheet" href="styles.css">
+	
+	<script src="../modernizr.custom.js"></script>
+</head>
+
+<body class="deck-container">
+
+<!--
+<div class="theme-menu">
+	<h2>Themes</h2>	
+	
+	<label for="style-themes">Style:</label>
+	<select id="style-themes">
+		<option selected value="../themes/style/web-2.0.css">Web 2.0</option>
+		<option value="../themes/style/swiss.css">Swiss</option>
+        <option value="../themes/style/neon.css">Neon</option>
+        <option value="../themes/style/mk.css">mk</option>
+		<option value="">None</option>
+	</select>
+	
+	<label for="transition-themes">Transition:</label>
+	<select id="transition-themes">
+		<option selected value="../themes/transition/horizontal-slide.css">Horizontal Slide</option>
+		<option value="../themes/transition/vertical-slide.css">Vertical Slide</option>
+		<option value="../themes/transition/fade.css">Fade</option>
+		<option value="">None</option>
+	</select>
+</div>
+-->
+
+<section class="slide" id="title-slide">
+<h1>HTML/CSS/<br>Javacript</h1>
+
+</section>
+
+<section class="slide" id="intro">
+<h2>Intro</h2>
+<h3>Michael Matuzak</h3>
+<h3>Programmer for <a href="http://yahoo.com">Y!</a> Media</h3>
+<h3><a href="mailto:michael@lambdaphant.com">michael@lambdaphant.com</a></h3>
+<h3><a href="http://lambdaphant.com">lambdaphant.com</a></h3>
+<h3><a href="http://twitter.com/mmatuzak">@mmatuzak</a></h3>
+<h3><a href="http://github.com/emkay">github.com/emkay</a></h3>
+<img src="http://lambdaphant.com/images/lambdaphant.png">
+</section>
+
+<section class="slide" id="what-is-html">
+	<h2>What is HTML?</h2>
+	<ul>
+		<li class="slide">
+            <h3>Hyper Text Markup Language</h3>
+            <p>Markup language for web pages. I like to think of it as a data format for web browsers.</p>
+            <pre>
+            <code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Hello HTML&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;p&gt;Hello World!&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+            </code></pre>
+		</li>
+	</ul>
+</section>
+
+<section class="slide" id="what-is-html-2">
+    <h2>What is HTML?</h2>
+    <h3>Elements</h3>
+    <p>An element is called a <strong>tag</strong>, and most of the time will have a start and an end.</p>
+    <p><strong>Examples:</strong>&lt;title&gt;, &lt;/title&gt;, &lt;p&gt;, &lt;/p&gt;, &lt;div&gt;, &lt;/div&gt;, etc.</p>
+    <h3>Attributes</h3>
+    <code>&lt;p class="blue"&gt;This is a blue sentence.&lt;/p&gt;</code>
+</section>
+
+<section class="slide" id="doctype">
+    <h2>The Doctype</h2>
+    <code>&lt;!DOCTYPE html&gt;</code>
+    <ul>
+        <li class="slide">
+        <h3>Defines the rendering mode</h3>
+        <p>Am I a XHTML or HTML document?</p>
+        </li>
+        <li class="slide">
+        <h3>All you really need...</h3>
+        <p>HTML5</p><code>&lt;!DOCTYPE html&gt;</code><br><br>
+        VS.<br><br>
+        <p>XHTML</p><code>&lt;!DOCTYPE html
+                      PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
+        </code>
+        </li>
+    </ul>
+</section>
+
+<section class="slide" id="quirksmode">
+    <h2>Quirksmode</h2>
+    <h3>Maintaining backwards compatability with web pages.</h3>
+    <p>No doctype.</p>
+    <h3>Activate standards mode!</h3>
+    <p>The doctype tells the browser to use standards mode.</p>
+</section>
+
+<section class="slide" id="trees">
+<h2>Trees!</h2>
+<ul>
+    <li class="slide">
+        <h3>Elements are parent and child nodes</h3>
+        <p>Think of it as a tree with branches and leaves.</p>
+    </li>
+    <li class="slide">
+        <pre><code>
+        &lt;html lang="en"&gt;
+            &lt;body&gt;
+            ...
+            &lt;/body&gt;
+        &lt;/html&gt;
+        </code></pre>
+    </li>
+    <li class="slide">
+        <h3>Lang</h3>
+        <p>The lang attribute signifies that this document is in english.</p>
+    </li>
+</ul>
+</section>
+
+<section class="slide" id="head">
+<h2>HEAD</h2>
+<ul>
+    <li class="slide">
+        <h3>Metadata everywhere</h3>
+        <p>The <code>&lt;head&gt;</code> element contains information <i>about</i> the page.</p>
+    </li>
+    <li class="slide">
+        <h3>Dubious Characters</h3>
+        <p>Always set a character set for the page.</p>
+        <code>&lt;meta charset="utf-8" /&gt;</code>
+    </li>
+    <li class="slide">
+        <h3>What else is inside of a head?</h3>
+        <code>&lt;title&gt;...&lt;/title&gt;</code> 
+        <p>Tells the browser what the <strong>title</strong> of the page is.</p>
+        <code>&lt;link rel="stylesheet" href="styles.css"&gt;</code>
+        <p>Tells the browser what <strong>css</strong> file to load.</p>
+    </li>
+</ul>
+</section>
+
+<section class="slide" id="body-slide">
+    <h2>BODY</h2>
+    <ul>
+        <li class="slide">
+            <h3>The Document Body</h3>
+            <p>This is where all your business goes.</p>
+            <pre><code>
+&lt;body&gt;
+  &lt;h1&gt;Welcome&lt;/h1&gt;
+  &lt;p&gt;Hello there! Check out this widget.&lt;/p&gt;
+  &lt;div class="widget"&gt;
+    ...
+  &lt;/div&gt;
+&lt;/body&gt;
+            </code></pre>
+        </li>
+    </ul>
+</section>
+
+<section class="slide" id="h1-tags">
+    <h2>The <code>h</code> Tags</h2>
+    <ul>
+        <li class="slide">
+            <h3>Headings</h3>
+            <p><code>h1...h6</code>
+        </li>
+        <li class="slide">
+            <h3>Provide a way to place headings on your content.</h3>
+        </li>
+        <li class="slide">
+            <h3><code>h1</code> is most important, and <code>h6</code> is least important.</h3>
+        </li>
+        <li class="slide">
+            <h3>Example</h3>
+            <pre><code>
+        &lt;div class="wigdet"&gt;
+            &lt;h2&gt;My Widget&lt;/h2&gt;
+            ...
+        &lt;/div&gt;
+            </code></pre>
+        </li>
+    </ul>
+</section>
+
+<section class="slide" id="p-tag">
+    <h2>Paragraphs</h2>
+    <ul>
+        <li class="slide">
+            <h3>Introducing the <code>p</code> tag</h3>
+            <p>The <code>p</code> tag denotes paragraphs.</p>
+        </li>
+        <li class="slide">
+            <h3>Example:</h3>
+            <code>&lt;p&gt;This is my paragraph.&lt;/p&gt;</code>
+        </li>
+        <li class="slide">
+        <h3>Put large chunks of text in a <code>p</code></h3>
+            <p>Most of the time you should enclose your large chunks of text in <code>p</code> tags. Anytime you are writing text that is larger than a heading think if it should be placed in a <code>p</code> tag.</p>
+        </li>
+    </ul>
+</section>
+
+<section class="slide" id="a-tag">
+    <h2>Links and Anchors</h2>
+    <ul>
+        <li class="slide">
+            <h3>Links</h3>
+            <p>How do we create <a href="#">Links</a>?</p>
+            <code>&lt;a href="http://lambdaphant.com"&gt;A Link&lt;/a&gt;</code>
+        </li>
+
+        <li class="slide">
+            <h3>Anchors</h3>
+            <p>What is this anchor nonsense?</p>
+            <code>&lt;a href="#intro"&gt;Go to the intro&lt;/a&gt;</code>
+        </li>
+    </ul>
+</section>
+
+
+<section class="slide" id="exercise-1">
+    <h2>Exercise 1</h2>
+    <p>Open up your text editor and use the tags <code>html</code>, <code>head</code>, <code>body</code>, <code>h1</code>, <code>p</code>, and <code>a</code> to write a welcome message for your site. The heading and copy text can be whatever you want. Link the text of the <code>h1</code> to the root of the document. Hint: "/".</p>
+</section>
+
+<section class="slide" id="lists">
+    <h2>Lists</h2>
+    <h3>The Unordered List</h3>
+    <p>For when you don't care about numbered ordering.</p>
+    <pre><code>
+&lt;ul&gt;
+    &lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;
+    </code></pre>
+</section>
+
+<section class="slide" id="lists-2">
+    <h2>Lists</h2>
+    <h3>The Ordered List</h3>
+    <p>The numbered version of a list.</p>
+    <pre><code>
+&lt;ol&gt;
+    &lt;li&gt;...&lt;/li&gt;
+&lt;/ol&gt;
+    </code></pre>
+</section>
+
+<section class="slide" id="div-and-span">
+    <h2><code>&lt;div&gt;</code> and <code>&lt;span&gt;</code></h2>
+    <h3>Used When No Other Semantic Element Will Work</h3>
+    <p>The <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code> tags are used when you have no other semantic element that works. For example, although it is possible to place a list or a paragraph inside a <code>&lt;div&gt;</code> while maintaining the same rendering, it is not a very good idea because we have the more semantic elements <code>&lt;ul&gt;</code> and <code>&lt;p&gt;</code>.</p>
+</section>
+
+<section class="slide" id="div-and-span-2">
+    <h2><code>&lt;div&gt;</code> and <code>&lt;span&gt;</code></h2>
+    <h3>Inline vs Block</h3>
+    <p>Inline elements <em>do not</em> provide a box for the content that is contained within them, and will not provide a line break. Block elements do.</p>
+    <pre><code>
+&lt;span&gt;Hello people.&lt;/span&gt;Directly after the element.
+    </code></pre>
+    <span>Hello people.</span>Directly after the element.
+    <pre><code>
+&lt;p&gt;Hello people.&lt;/p&gt;Directly after the element.
+    </code></pre>
+    <p>Hello people.</p>Directly after the element.
+</section>
+
+<section class="slide" id="new-tags-section">
+    <h2>New HTML5 Tags</h2>
+    <h3>The <code>&lt;section&gt;</code> Tag</h3>
+    <p>A grouping of content. You usually want to put a heading on these.</p>
+    <pre><code>
+&lt;section id="chapter-1" class="chapter"&gt;
+    &lt;h2&gt;The Great Beyond&lt;/h2&gt;
+&lt;/section&gt;
+    </code></pre>
+</section>
+
+<section class="slide" id="new-tags-nav">
+    <h2>New HTML5 Tags</h2>
+    <h3>The <code>&lt;nav&gt;</code> Tag</h3>
+    <p>Navigation links usually within your site.</p>
+    <pre><code>
+&lt;nav&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Home&lt;/li&gt;
+        &lt;li&gt;Contact&lt;/li&gt;
+        &lt;li&gt;FAQ&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+    </code></pre>
+</section>
+
+<section class="slide" id="new-tags-2">
+    <h2>New HTML5 Tags</h2>
+    <h3>The <code>&lt;article&gt;</code> Tag</h3>
+    <p>A part of the page that consists of large group of content. Examples include, blog posts, newspaper article, etc.</p>
+    <pre><code>
+&lt;article class="blog"&gt;
+    &lt;p&gt;Hello there. Welcome...&lt;/p&gt;
+    ...
+&lt;/article&gt;
+    </code></pre>
+</section>
+
+<section class="slide" id="new-tags-header">
+    <h2>New HTML5 Tags</h2>
+    <h3>The <code>&lt;header&gt;</code> Tag</h3>
+    <p>These can be headers of a page, or headers of a section. Usually will have an <code>h1...h6</code> element.</p>
+    <pre><code>
+&lt;header&gt;
+    &lt;h1&gt;My Crazy Blog&lt;/h1&gt;
+    ...
+&lt;/header&gt;
+    </code></pre>
+</section>
+
+<section class="slide" id="new-tags-3">
+    <h2>New HTML5 Tags</h2>
+    <h3>The <code>&lt;footer&gt;</code> Tag</h3>
+    <p>Similar to the <code>header</code> but usually at the bottom (although they don't have to be). Usually contains stuff like footnotes, copyright information, license agreements, etc.</p>
+    <pre><code>
+&lt;footer&gt;
+    &lt;p&gt;&copy; by This is not real 2011&lt;/p&gt;
+&lt;/footer&gt;
+    </code></pre>
+</section>
+
+<section class="slide" id="new-tags-aside">
+    <h2>New HTML5 Tags</h2>
+    <h3>The <code>&lt;aside&gt;</code> Tag</h3>
+    <p>For content that is related to the main content, but seperate. Confusing right? Example are quotes, related articles, etc.</p>
+    <pre><code>
+&lt;aside&gt;
+    &lt;h3&gt;Related Blog Posts&lt;/h3&gt;
+    &lt;ul&gt;
+        ...
+    &lt;/ul&gt;
+&lt;/aside&gt;
+    </code></pre>
+</section>
+
+<section class="slide" id="exercise-2">
+    <h2>Exercise 2</h2>
+    <p>Take exercise 1 and add a <code>header</code> around your <code>h1</code>. Also put a <code>nav</code> element on the page with a list of links to "Home", "Blog", and "FAQ".</p>
+    <p>Validate your markup by going to http://html5.validator.nu/ and selecting text field. Copy/paste your markup in the text field and click validate. Fix any errors on your page.</p>
+</section>
+
+<section class="slide" id="forms-1">
+    <h2>Forms</h2>
+    <p>A web form is a container for controls that allow you to receieve input from the user. These can be text input boxes, checkbox style input boxes, select dropdowns, buttons, and radio boxes.</p>
+    <h3>User Input</h3>
+    <pre><code>
+        &lt;form&gt;
+            &lt;p&gt;&lt;input type="text"&gt;&lt;p&gt;
+            &lt;p&gt;&lt;input type="radio"&gt;&lt;p&gt;
+            &lt;p&gt;&lt;input type="checkbox"&gt;&lt;p&gt;
+        &lt;/form&gt;
+    </code></pre>
+    <form>
+        <p><input type="text"></p>
+        <p><input type="radio"></p>
+        <p><input type="checkbox"></p>
+    </form>
+</section>
+
+<section class="slide" id="forms-2">
+    <h2>Forms</h2>
+    <pre><code>
+&lt;form&gt;
+    &lt;p&gt;
+        &lt;label for="name"&gt;Name:&lt;/label&gt;
+        &lt;input id="name" name="name" type="text"&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;label for="email"&gt;Email:&lt;/label&gt;
+        &lt;input id="email" name="email" type="email"&gt;
+    &lt;/p&gt;
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+    </code></pre>
+    <form>
+        <p><label for="name">Name:</label><input id="name" name="name" type="text"></p>
+        <p><label for="email">Email:</label><input id="email" name="email" type="email"></p>
+        <button type="submit">Submit</button>
+    </form>
+</section>
+
+<section class="slide" id="forms-3">
+    <h2>Forms</h2>
+    <h3>Grouping Form Elements</h3>
+    <p>Sometimes you need to create groups of elements within the same form.</p>
+    <p>For example, you may want to group toget her basic info for a user such as name and email.</p>
+</section>
+
+<section class="slide" id="forms-grouping">
+    <h2>Forms</h2>
+    <h3>Introducing <code>&lt;fieldset&gt;</code> and <code>&lt;legend&gt;</code></h3>
+    <pre><code>
+ &lt;form&gt;
+    &lt;fieldset&gt;
+    &lt;legend&gt;Basic Info&lt;/legend&gt;
+    &lt;p&gt;
+        &lt;label for="name"&gt;Name:&lt;/label&gt;
+        &lt;input id="name" name="name" type="text"&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;label for="email"&gt;Email:&lt;/label&gt;
+        &lt;input id="email" name="email" type="email"&gt;
+    &lt;/p&gt;
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+    &lt;/fieldset&gt;
+&lt;/form&gt;
+    </code></pre>
+</section>
+
+<section class="slide" id="forms-4">
+    <h2>Forms</h2>
+    <ul>
+        <li>
+            <h3>Autofocus</h3>
+            <code>&lt;input name="name" autofocus&gt;</code><br>
+        </li>
+
+        <li class="slide">
+            <h3>Placeholders</h3>
+            <code>&lt;input name="name" placeholder="Your Name Goes Here"&gt;</code><br>
+            <input name="name" placeholder="Your Name Goes Here">
+        </li>
+        <li class="slide">
+            <h3>Required</h3>
+            <code>&lt;input name="name" required&gt;</code><br>
+            <input name="name" required>
+        </li>
+    </ul>
+</section>
+
+<section class="slide" id="exercise-3">
+    <h2>Exercise 3</h2>
+    <p>Build a web form into exercise 2. The form should have fields for name, address, email, and some radio boxes to select t-shirt size. Use grouping if it makes sense.</p>
+</section>
+
+<section class="slide" id="css-intro">
+    <h2>CSS</h2>
+    <p>Cascading Style Sheets is a language to describe the look and format of the document. Elements in the document are targetted using <em>selectors</em> and provided rules to enact on that selector.</p>
+    <p>Syntax is easy to learn.</p>
+    <p>
+        <pre>
+        <code>
+        p {
+            color: #000; 
+        }
+
+        #main {
+            width: 968px;
+        }
+
+        .widget {
+            margin-left: 10px;
+            padding: 5px;
+        }
+        </code>
+        </pre>
+    </p>
+</section>
+
+<section class="slide" id="css-intro-2">
+    <h2>CSS</h2>
+    <h3>Syntax and Selectors</h3>
+    <ul>
+        <li class="slide">
+            <h3>Syntax</h3>
+            <code>selector { rules; }</code>
+        </li>
+        <li class="slide">
+            <h3>Element Selector</h3>
+            <code>p { color: #000; }</code>
+        </li>
+        <li class="slide">
+            <h3>ID Based Selector</h3>
+            <code>#main { color: #000; }</code>
+        </li>
+        <li class="slide">
+            <h3>Class Based Selector</h3>
+            <code>.widget { color: #000; }</code>
+        </li>
+    </ul>
+</section>
+
+<section class="slide" id="css-id-vs-class">
+    <h2>ID vs. Class</h2>
+    <p>ID's and classes are attributes that are set on elements.</p>
+    <h3>ID</h3>
+    <p>Used for elements that appear on the page once.</p>
+    <pre><code>
+    &lt;div id="main"&gt;
+        ...
+    &lt;/div&gt;
+
+    #main {
+        width: 968px;
+    }
+    </code></pre>
+</section>
+
+<section class="slide" id="css-id-vs-class-2">
+    <h2>ID vs. Class</h2>
+    <h3>Class</h3>
+    <p>Used for element groups that you will reuse.</p>
+    <pre><code>
+    &lt;div class="widget"&gt;
+        ...
+    &lt;/div&gt;
+
+    .widget {
+        background: url(somewhere.png);
+        height: 300px;
+        width: 300px;
+    }
+    </code></pre>
+    <h3>Summary</h3>
+    <p>Use id's when you will only have one possible element to target. Use classes when you will have rules that you need to reuse in multiple places on the page.</p>
+</section>
+
+<section class="slide" id="css-grouping-selectors">
+    <h2>Grouping Selectors</h2>
+    <p>What happens when you need to apply the same rule to multiple selectors?</p>
+    <ul>
+        <li class="slide">
+            <h3>Use Selector Grouping</h3>
+            <code>h1 { color: #fff; }</code><br>
+            <code>h2 { color: #fff; }</code><br>
+            <code>h3 { color: #fff; }</code><br><br>
+            <p>This is the same as...</p>
+        </li>
+        <li class="slide">
+            <code>h1, h2, h3 { color: #fff; }</code>
+        </li>
+        <li class="slide">
+            <h3>Grouping Classes or ID's</h3>
+            <code>.widget, .module, .plugin { color: #fff; }</code><br><br>
+            <code>#main, #person, #photo { width: 500px; }</code>
+        </li>
+    </ul>
+</section>
+
+<section class="slide" id="css-element-with-id-or-class">
+    <h2>Selecting a Element With a Specific Id or Class</h2>
+    <code>h1.widget { color: #fff; }</code><br><br>
+    <code>h1#main { color: #fff; }</code><br><br>
+    <p>Use the . or # syntax to denote that an element has a particular id or class.</p>
+</section>
+
+<section class="slide" id="css-parents-descendants-and-children">
+    <h2>Parents, Descendants, and Children</h2>
+    <ul>
+        <li class="slide">
+            <code>.widget p { padding: 5px; }</code><br><br>
+            <p>The rule will apply to any <code>p</code> descendant of a class widget.</p>
+        </li>
+        <li class="slide">
+            <code>.widget &gt; p { padding: 5px; }</code><br><br>
+            <p>The rule will apply to any <code>p</code> child of a class widget.</p>
+        </li>
+        <li class="slide">
+            <code>.widget ul &gt; li { padding: 5px; }</code><br><br>
+            <p>The rule applies to the list element child of an unordered list that is a descendant of a class widget.</p>
+        </li>
+        <li class="slide">
+            <h3>We don't have time to go over them all broswe to http://www.w3.org/TR/css3-selectors/ to find out more</h3>
+        </li>
+    </ul>
+</section>
+
+<section class="slide" id="css-a-hover">
+    <h2>:hover</h2>
+    <h3>We will however go over this one</h3>
+    <ul>
+        <li class="slide">
+            <h3>This...</h3>
+            <code>a:hover { text-decoration: underline; }</code><br><br>
+        </li>
+        <li class="slide">
+            <h3>Does this... <a href="#">This is a link</a></h3>
+        </li>
+    </ul>
+</section>
+
+<section class="slide" id="css-box-model">
+    <h2>The Box Model</h2>
+    <img src="http://www.w3.org/TR/css3-box/box.png">
+    <p>Imagine the contents of a <code>p</code> tag as the <em>content</em>.</p>
+    <pre><code>
+    &lt;span&gt;This is some text.&lt;/span&gt;After the span.
+    
+    span { padding-right: 5px; }
+    </code></pre>
+    <span style="padding-right: 100px;">This is some text.</span>After the span.
+</section>
+
+<section class="slide" id="css-box-model-2">
+    <h2>The Box Model</h2>
+    <img src="http://www.w3.org/TR/css3-box/box.png">
+    <pre><code>
+    &lt;span&gt;This is some text.&lt;/span&gt;After the span.
+
+    span { padding: 0; }
+    </code></pre>
+    <span style="padding: 0;">This is some text.</span>After the span.
+</section>
+
+<section class="slide" id="css-box-model-3">
+    <h2>The Box Model</h2>
+    <img src="http://www.w3.org/TR/css3-box/box.png">
+    <pre><code>
+    &lt;span&gt;This is some text.&lt;/span&gt;After the span.
+
+    span { 
+        border: 1px solid #000;
+        padding: 10px; 
+    }
+    </code></pre>
+    <span style="border: 1px solid #000; padding: 10px;">This is some text.</span>After the span.
+</section>
+
+<section class="slide" id="css-box-model-4">
+    <h2>The Box Model</h2>
+    <img src="http://www.w3.org/TR/css3-box/box.png">
+    <pre><code>
+    &lt;span&gt;This is some text.&lt;/span&gt;After the span.
+
+    span { 
+        border: 1px solid #000;
+        margin: 10px; 
+    }
+    </code></pre>
+    <span style="border: 1px solid #000; margin: 10px;">This is some text.</span>After the span.
+</section>
+
+<section class="slide" id="css-box-model-5">
+    <h2>The Box Model</h2>
+    <ul>
+        <li>
+            <h3>Display</h3>
+            <p>All elements have a default display. For example, <code>p</code> is a block level element, and <code>span</code> is an inline element.</p>
+            <p>With css you can alter the default to display.</p>
+            <code>&lt;p&gt;This is a paragraph with &lt;span&gt;a span inside&lt;/span&gt; and some more text.&lt;/p&gt;</code>
+        </li>
+        <li class="slide">
+            <h3>Renders as...</h3>
+            <p>This is a paragraph with <span>a span inside</span> and some more text.</p>
+        </li>
+        <li class="slide">
+            <h3>Changing the default</h3>
+            <code>&lt;p&gt;This is a paragraph with &lt;span&gt;a span inside&lt;/span&gt; and some more text.&lt;/p&gt;</code><br><br>
+            <code>span { display: block; }</code>
+        </li>
+        <li class="slide">
+            <h3>We get...</h3>
+            <p>This is a paragraph with <span style="display: block;">a span inside</span> and some more text.</p>
+        </li>
+    </ul>
+</section>
+
+<section class="slide" id="css-display-vs-visibility">
+    <h2>Display vs. Visibility</h2>
+    <h3><code>display: none;</code></h3>
+    <p>You can set the <code>display</code> of an element to none and it will remove it from the page.</p>
+    <code>&lt;p&gt;This is a paragraph&lt;/p&gt;</code><br><br>
+    <code>p { display: none; }</code><br><br>
+    <p style="display:none;">This is a paragraph</p>
+    <p>This is a paragraph after the display none paragraph.</p>
+</section>
+
+<section class="slide" id="css-display-vs-visibility-2">
+    <h2>Display vs. Visibility</h2>
+    <h3><code>visibility: hidden;</code></h3>
+    <p>Setting <code>visibility: hidden;</code> will provide different results.</p>
+    <code>&lt;p&gt;This is a paragraph&lt;/p&gt;</code><br><br>
+    <code>p { visibility: hidden; }</code><br><br>
+    <p style="visibility: hidden;">This is a paragraph</p>
+    <p>This is a paragraph after the display none paragraph.</p>
+</section>
+
+<section class="slide" id="exercise-4">
+    <h2>Exercise 4</h2>
+    <p>Create a file called <code>styles.css</code> in the same directory as your file from the previous exercises. Add some padding, margin, and color to your navigation links. Also when you hover over the navigation links change color. Make sure there is a paragraph on the page. Give it a class name and apply a border to it. Type and color of the border do not matter.</p>
+    <p>Add the css file to your page by using the <code>link</code> tag in your <code>head</code>.</p>
+    <p>Hint: <br><code>&lt;link rel="stylesheet" href="styles.css"&gt;</code>
+    <p>Bonus: Give your nav links some padding.</p>
+</section>
+
+<section class="slide" id="javascript-intro">
+    <h2>JavaScript - The Language of the Web</h2>
+    <ul>
+        <li class="slide">
+            <h3>Quick Intro</h3>
+            <p>Javascript is a prototype based multi paradigm language.</p>
+        </li>
+        <li class="slide">
+            <h3>Objects are cloned rather than created by classes</h3>
+        </li>
+        <li class="slide">
+            <h3>Object oriented with some functional goodness</h3>
+        </li>
+        <li class="slide">
+            <h3>Functions are first class objects</h3>
+            <p>Meaning we can pass them in as parameters to other functions.</p>
+        </li>
+        <li class="slide">
+            <h3>Interacts with the web browser through an API called the DOM (Document Object Model)</h3>
+        </li>
+    </ul>
+</section>
+
+<section class="slide" id="javascript-intro-2">
+    <h2>JavaScript</h2>
+    <ul>
+        <li class="slide">
+            <h3>JavaScript !== Java</h3>
+            <p>The two languages have about as much in common as peanut butter and ham.</p>
+        </li>
+        <li class="slide">
+            <h3>JavaScript is more like Lisp or Scheme than Java</h3>
+            <p>It's like a Scheme with a C style syntax.</p>
+        </li>
+    </ul>
+</section>
+
+<section class="slide" id="javascript-example">
+    <h2>Hello World</h2>
+    <script src="https://gist.github.com/1346824.js?file=hello.js"></script>
+    <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/mmatuzak/dpNv5/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+</section>
+
+<section class="slide" id="javascript-script-tags">
+    <h2>Including JavaScript on your page</h2>
+    <h3>It's as simple as...</h3>
+    <code>&lt;script src="script.js"&gt;&lt;/script&gt;</code>
+    
+</section>
+
+<section class="slide" id="javascript-primitives">
+    <h2>JavaScript Primitives</h2>
+    <ul>
+        <li>
+            <h3>There are only Five primitive types that are not objects</h3>
+        </li>
+        <li class="slide">
+            <h3>Numbers</h3>
+            <code>1</code><br>
+            <code>2</code><br>
+            <code>256</code>
+        </li>
+        <li class="slide">
+            <h3>Strings</h3>
+            <p>"Dog"</p>
+            <p>"Cat"</p>
+            <p>"Bacon"</p>
+        </li>
+        <li class="slide">
+            <h3>Boolean</h3>
+            <code>true</code><br>
+            <code>false</code>
+        </li>
+        <li class="slide">
+            <h3>Null</h3>
+        </li>
+        <li class="slide">
+            <h3>Undefined</h3>
+        </li>
+    </ul>
+</section>
+
+<section class="slide" id="javascript-numbers">
+    <h2>Numbers</h2>
+    
+</section>
+
+<section class="slide" id="javascript-strings">
+    <h2>Strings</h2>
+</section>
+
+<section class="slide" id="javascript-objects">
+    <h2>Objects</h2>
+</section>
+
+<section class="slide" id="javascript-functions">
+    <h2>Functions</h2>
+</section>
+
+<section class="slide" id="javascript-arrays">
+    <h2>Arrays</h2>
+</section>
+
+<section class="slide" id="javascript-methods">
+    <h2>Methods</h2>
+</section>
+
+<section class="slide" id="javascript-inheritance">
+    <h2>Inheritance</h2>
+</section>
+
+<section class="slide" id="javascript-patterns-1">
+    <h2>Patterns</h2>
+    <ul>
+        <li class="slide">
+            <h3>Use <code>var</code> to make a variable have local scope</h3>
+            <script src="https://gist.github.com/1347026.js?file=global-antipattern.js"></script>
+        </li>
+    </ul>
+</section>
+
+<a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+<a href="#" class="deck-next-link" title="Next">&#8594;</a>
+
+<p class="deck-status">
+	<span class="deck-status-current"></span>
+	/
+	<span class="deck-status-total"></span>
+</p>
+
+<form action="." method="get" class="goto-form">
+	<label for="goto-slide">Go to slide:</label>
+	<input type="number" name="slidenum" id="goto-slide">
+	<input type="submit" value="Go">
+</form>
+
+<a href="." title="Permalink to this slide" class="deck-permalink">#</a>
+
+
+  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="../jquery-1.6.4.min.js"><\/script>')</script>
+
+<!-- Deck Core and extensions -->
+<script src="../core/deck.core.js"></script>
+<script src="../extensions/menu/deck.menu.js"></script>
+<script src="../extensions/goto/deck.goto.js"></script>
+<script src="../extensions/status/deck.status.js"></script>
+<script src="../extensions/navigation/deck.navigation.js"></script>
+<script src="../extensions/hash/deck.hash.js"></script>
+
+<!-- Specific to this page -->
+<script src="script.js"></script>
+
+</body>
+</html>
