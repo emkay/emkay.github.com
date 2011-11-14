@@ -57,8 +57,8 @@
 -->
 
 <section class="slide" id="title-slide">
-<h1>HTML/CSS/<br>Javacript</h1>
-
+<h1>HTML/CSS/<br>JavaScript</h1>
+<h2>Follow Along At: <a href="http://emkay.github.com/csun/presentation/">http://emkay.github.com/csun/presentation/</a></h2>
 </section>
 
 <section class="slide" id="intro">
@@ -83,7 +83,7 @@
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
     &lt;head&gt;
-        &lt;title&gt;Hello HTML&lt;/title&gt;
+        &lt;title&gt;Hello World&lt;/title&gt;
     &lt;/head&gt;
     &lt;body&gt;
         &lt;p&gt;Hello World!&lt;/p&gt;
@@ -140,16 +140,12 @@
     </li>
     <li class="slide">
         <pre><code>
-        &lt;html lang="en"&gt;
+        &lt;html&gt;
             &lt;body&gt;
             ...
             &lt;/body&gt;
         &lt;/html&gt;
         </code></pre>
-    </li>
-    <li class="slide">
-        <h3>Lang</h3>
-        <p>The lang attribute signifies that this document is in english.</p>
     </li>
 </ul>
 </section>
@@ -255,10 +251,19 @@
     </ul>
 </section>
 
+<section class="slide" id="img-tag">
+    <h2>Images</h2>
+    <p>To place images in the document you have a couple options, but the first one we will introduce is the <code>img</code> tag.</p>
+    <code>&lt;img src="arc.png" alt="The Arc de Triomphe"&gt;</code>
+    <br><br>
+    <img src="http://farm4.static.flickr.com/3520/3871497451_9826508af2.jpg" alt="The Arc de Triomphe">
+    <p>Pretty simple.</p>
+</section>
 
 <section class="slide" id="exercise-1">
     <h2>Exercise 1</h2>
     <p>Open up your text editor and use the tags <code>html</code>, <code>head</code>, <code>body</code>, <code>h1</code>, <code>p</code>, and <code>a</code> to write a welcome message for your site. The heading and copy text can be whatever you want. Link the text of the <code>h1</code> to the root of the document. Hint: "/".</p>
+    <p><em>Bonus:</em> Find an image online and put it somewhere on your page. You can use any image, but if you have trouble finding one look on <a href="http://flickr.com">Flickr.com</a>.</p>
 </section>
 
 <section class="slide" id="lists">
@@ -270,6 +275,11 @@
     &lt;li&gt;...&lt;/li&gt;
 &lt;/ul&gt;
     </code></pre>
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
 </section>
 
 <section class="slide" id="lists-2">
@@ -281,6 +291,11 @@
     &lt;li&gt;...&lt;/li&gt;
 &lt;/ol&gt;
     </code></pre>
+    <ol>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ol>
 </section>
 
 <section class="slide" id="div-and-span">
@@ -376,6 +391,16 @@
     &lt;/ul&gt;
 &lt;/aside&gt;
     </code></pre>
+</section>
+
+<section class="slide" id="new-tags-resources">
+    <h2>HTML5 Resources</h2>
+    <p>Here are some extra resources that you should check out.</p>
+    <ul>
+        <li><h3><a href="http://diveintohtml5.info/">Dive Into HTML 5</a></h3></li>
+        <li><h3><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/">HTML Specification</a></h3></li>
+        <li><h3><a href="http://developers.whatwg.org/">HTML5 Technical Specification for Web Developers</a></h3></li>
+    </ul>
 </section>
 
 <section class="slide" id="exercise-2">
@@ -717,7 +742,7 @@
     <code>&lt;p&gt;This is a paragraph&lt;/p&gt;</code><br><br>
     <code>p { visibility: hidden; }</code><br><br>
     <p style="visibility: hidden;">This is a paragraph</p>
-    <p>This is a paragraph after the display none paragraph.</p>
+    <p>This is a paragraph after the visibility hidden paragraph.</p>
 </section>
 
 <section class="slide" id="exercise-4">
@@ -726,6 +751,93 @@
     <p>Add the css file to your page by using the <code>link</code> tag in your <code>head</code>.</p>
     <p>Hint: <br><code>&lt;link rel="stylesheet" href="styles.css"&gt;</code>
     <p>Bonus: Give your nav links some padding.</p>
+</section>
+
+<section class="slide" id="css3-border-radius">
+    <h2>CSS 3 Border Radius</h2>
+    <h3>Rounded Corners With No Images</h3>
+    <pre><code>
+&lt;div class="rounded"&gt;
+    &lt;p&gt;some text...&lt;/p&gt;
+&lt;/div&gt;
+
+.rounded { 
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    border: 1px solid #000;
+}
+    </code></pre>
+
+    <div style="border-radius: 10px; border: 1px solid #000; padding: 5px;">
+        <p>some text...</p>
+    </div>
+</section>
+
+<section class="slide" id="css3-box-shadow">
+    <h2>CSS 3 Box Shadow</h2>
+    <h3>Attaches a drop shadow to a box</h3>
+    <pre><code>
+&lt;div class="box_shadow"&gt;
+    &lt;p&gt;some text...&lt;/p&gt;
+&lt;/div&gt;
+
+.box_shadow {
+    -webkit-box-shadow: 5px 5px 5px #666; 
+    -moz-box-shadow: 5px 5px 5px #666; 
+    box-shadow: 5px 5px 5px #666;
+    border: 1px solid #666;
+}
+    </code></pre>
+
+    <div style="padding: 5px; box-shadow: 5px 5px 5px #666; border: 1px solid #666;">
+        <p>some text...</p>
+    </div>
+</section>
+
+<section class="slide" id="css3-textshadow">
+    <h2>CSS 3 Text Shadow</h2>
+    <h3>Attaches a shadow to text</h3>
+    <pre><code>
+&lt;h2 class="textshadow"&gt;
+    some text...
+&lt;/h2&gt;
+
+.textshadow {
+    text-shadow: 5px 5px 0 #888; 
+}
+    </code></pre>
+
+    <h2 style="text-shadow: 5px 5px 0 #888;">CSUN</h2>
+</section>
+
+<section class="slide" id="css3-transition">
+    <h2>CSS 3 Transition</h2>
+    <pre><code>
+&lt;img class="photo" src="cat.png"&gt;
+
+.photo { 
+    -webkit-transform: rotate(-10deg);  
+    -moz-transform: rotate(-10deg);  
+    -ms-transform: rotate(-10deg);  
+    -o-transform: rotate(-10deg);  
+    transform: rotate(-10deg);  
+}
+    </code></pre>
+
+    <div style="-webkit-transform: rotate(-10deg); border: 5px solid #000; width: 240px; height: 160px;">
+        <img src="http://farm6.static.flickr.com/5104/5644860063_d78c2bc279_m.jpg">
+    </div>
+</section>
+
+<section class="slide" id="css-resources">
+    <h2>CSS Resources</h2>
+    <p>Here are some css resources you should check out.</p>
+    <ul>
+        <li><h3><a href="http://www.w3.org/TR/css3-box/">The Box Model</a></h3></li>
+        <li><h3><a href="http://www.w3.org/TR/2011/REC-css3-selectors-20110929/">CSS Selectors</a></h3></li>
+        <li><h3><a href="http://css3please.com/">CSS3 Please</a></h3></li>
+    </ul>
 </section>
 
 <section class="slide" id="javascript-intro">
@@ -775,7 +887,14 @@
     <h2>Including JavaScript on your page</h2>
     <h3>It's as simple as...</h3>
     <code>&lt;script src="script.js"&gt;&lt;/script&gt;</code>
-    
+    <h3>You can also inline code by placing it between the <code>&lt;script&gt;</code> tags</h3>
+    <pre><code>
+&lt;script&gt;
+    alert('test');
+&lt;/script&gt;
+    </code></pre>
+    <h3>You should limit inline JavaScript and use the first method when possible</h3>
+    <p>It allows the browser to cache the script and keeps your code organized.</p>
 </section>
 
 <section class="slide" id="javascript-primitives">
@@ -812,27 +931,100 @@
 
 <section class="slide" id="javascript-numbers">
     <h2>Numbers</h2>
-    
+    <ul>
+        <li class="slide"><h3>Single Number Type</li>
+        <li class="slide"><h3>Internally a 64-bit Floating Point</h3></li>
+        <li class="slide"><h3>1.0 === 1</h3></li>
+    </ul>
 </section>
 
 <section class="slide" id="javascript-strings">
     <h2>Strings</h2>
+    <ul>
+        <li class="slide">
+            <h3>Wrapped in single or double quotes</h3>
+            <p>"hello" and 'ham' are both strings.</p>
+        </li>
+        <li class="slide">
+            <h3>Strings Have Methods and Properties</h3>
+            <code>"ham".toUpperCase() === 'HAM'</code><br><br>
+            <code>"ham".length === 3</code>
+        </li>
+    </ul>
 </section>
 
 <section class="slide" id="javascript-objects">
     <h2>Objects</h2>
+    <h3>Besides the Primitives, Everything is an Object</h3>
+    <ul>
+        <li class="slide"><h3>Objects are Keyed Collections</h3></li>
+        <li class="slide"><h3>Objects are a Container of Properties</h3></li>
+        <li class="slide"><h3>Properties have a Name and a Value</h3></li>
+    </ul>
+</section>
+
+<section class="slide" id="javascript-object-literal">
+    <h2>Object Literals</h2>
+    <h3>Convenient Notation for Creating Objects</h3>
+    <script src="https://gist.github.com/1362948.js?file=object_literal.js"></script>
+    <h3>Objects are Easy to Update</h3>
+    <script src="https://gist.github.com/1363038.js?file=object_example.js"></script>
 </section>
 
 <section class="slide" id="javascript-functions">
     <h2>Functions</h2>
+    <ul>
+        <li class="slide"><h3>Function are Objects. Big Surprise.</h3></li>
+        <li class="slide"><h3>A Group of Statements</h3></li>
+        <li class="slide"><h3>Code Reuse</h3></li>
+        <li class="slide"><h3>Functions Can be Invoked</h3></li>
+        <li class="slide"><h3>Functions Always Return a Value</h3></li>
+    </ul>
+</section>
+
+<section class="slide" id="javascript-functions-examples">
+    <h2>Function Examples</h2>
+    <script src="https://gist.github.com/1363076.js?file=functions.js"></script>
+</section>
+
+<section class="slide" id="javascript-functions-as-methods">
+    <h2>Functions as Methods</h2>
+    <script src="https://gist.github.com/1363087.js?file=functions_as_methods.js"></script>
+</section>
+
+<section class="slide" id="javascript-functions-scope">
+    <h2>Function Scope</h2>
+    <h3>JavaScript Scope is at the Function Level</h3>
+    <p>Many languages have block level scope, but not this one.</p>
+    <script src="https://gist.github.com/1363187.js?file=function_scope.js"></script>
+</section>
+
+<section class="slide" id="javascript-functions-this-problem">
+    <h2>Functions this Problem</h2>
+    <script src="https://gist.github.com/1363117.js?file=functions_this_problem.js"></script>
+</section>
+
+<section class="slide" id="javascript-function-this-solution">
+    <h2>Functions this Solution</h2>
+    <script src="https://gist.github.com/1363121.js?file=functions_this_solution.js"></script>
 </section>
 
 <section class="slide" id="javascript-arrays">
     <h2>Arrays</h2>
+    <h3>Not Real Arrays, but Object Like Arrays</h3>
+    <p>Updating and grabbing values is similar to objects. Array's use the subscript notation that we have already seen in objects.</p>
+    <h3>Have Special Methods that Regular Objects Don't Have</h3>
+    <p>More on this later.</p>
 </section>
 
-<section class="slide" id="javascript-methods">
-    <h2>Methods</h2>
+<section class="slide" id="javascript-array-example">
+    <h2>Array Examples</h2>
+    <script src="https://gist.github.com/1363201.js?file=array_examples.js"></script>
+</section>
+
+<section class="slide" id="javascript-array-methods">
+    <h2>Array Methods</h2>
+    <script src="https://gist.github.com/1363240.js?file=array_methods.js"></script>
 </section>
 
 <section class="slide" id="javascript-inheritance">
@@ -841,12 +1033,8 @@
 
 <section class="slide" id="javascript-patterns-1">
     <h2>Patterns</h2>
-    <ul>
-        <li class="slide">
-            <h3>Use <code>var</code> to make a variable have local scope</h3>
-            <script src="https://gist.github.com/1347026.js?file=global-antipattern.js"></script>
-        </li>
-    </ul>
+    <h3>Use <code>var</code> to make a variable have local scope</h3>
+    <script src="https://gist.github.com/1347026.js?file=global-antipattern.js"></script>
 </section>
 
 <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
