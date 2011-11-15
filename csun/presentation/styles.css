@@ -1,3 +1,9 @@
+.deck-container h1 {
+    color: #000;
+    text-shadow: 5px 5px 0 #888;
+    border: 10px solid #ddd;
+}
+
 .deck-container .theme-menu {
   display: none;
   position: fixed;
