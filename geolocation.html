@@ -10,10 +10,18 @@
                 var latitude = position.coords.latitude;
                 var longitude = position.coords.longitude;
                 console.log(latitude, longitude);
+                var map = new GMap2(document.getElementById("geo-wrapper"));
+                var center = new GLatLng(latitude, longitude);
+                map.setCenter(center, 14);
+                map.addControl(new GSmallMapControl());
+                map.addControl(new GMapTypeControl());
+                map.addOverlay(new GMarker(center, {draggable: false, title: "You are here"}));
             }
             get_location();
         </script>
     </head>
     <body>
+        <div id="geo-wrapper">
+        </div>
     </body>
 </html>
