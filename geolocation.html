@@ -11,8 +11,8 @@
                 var latitude = position.coords.latitude;
                 var longitude = position.coords.longitude;
                 console.log(latitude, longitude);
-                var map = new GMap2(document.getElementById("geo-wrapper"));
-                var center = new GLatLng(latitude, longitude);
+                var map = new google.maps.Map(document.getElementById("geo-wrapper"));
+                var center = new google.maps.LatLng(latitude, longitude);
                 map.setCenter(center, 14);
                 map.addControl(new GSmallMapControl());
                 map.addControl(new GMapTypeControl());
