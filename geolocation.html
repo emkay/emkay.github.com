@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+    <head>
+        <script>
+            function get_location() {
+                navigator.geolocation.getCurrentPosition(show_map);
+            }
+
+            function show_map(position) {
+                var latitude = position.coords.latitude;
+                var longitude = position.coords.longitude;
+                console.log(latitude, longitude);
+            }
+            get_location();
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
