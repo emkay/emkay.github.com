@@ -10,13 +10,13 @@
             function show_map(position) {
                 var latitude = position.coords.latitude;
                 var longitude = position.coords.longitude;
-                console.log(latitude, longitude);
-                var map = new google.maps.Map(document.getElementById("geo-wrapper"));
                 var center = new google.maps.LatLng(latitude, longitude);
-                map.setCenter(center, 14);
-                map.addControl(new GSmallMapControl());
-                map.addControl(new GMapTypeControl());
-                map.addOverlay(new GMarker(center, {draggable: false, title: "You are here"}));
+                var options = {
+                    zoom: 8,
+                    center: center,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+                var map = new google.maps.Map(document.getElementById("geo-wrapper"), options);
             }
             get_location();
         </script>
