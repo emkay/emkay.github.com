@@ -21,6 +21,11 @@
                     mapTypeId: google.maps.MapTypeId.ROADMAP
                 };
                 var map = new google.maps.Map(document.getElementById("geo-wrapper"), options);
+                var marker = new google.maps.Marker({
+                    position: center,
+                    map: map,
+                    title:"You are here"
+                });
             }
             get_location();
         </script>
